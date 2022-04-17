@@ -1,0 +1,137 @@
+/* General */
+* {box-sizing: border-box}
+
+body {
+    margin:0; 
+    padding: 30px 80px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif; 
+}
+.dark {background-color: hsl(230, 17%, 14%)}
+
+@media (max-width: 900px) {body {padding: 15px}}
+
+p {font-weight: 700; color: hsl(228, 12%, 44%)}
+
+.flex {display: flex; align-items: center; justify-content: space-between}
+
+.up, .down {font-size: 12px; margin-left: 5px}
+
+.up {color:hsl(163, 72%, 41%) !important}
+
+.down {color:hsl(356, 69%, 56%) !important}
+/* Start Header */
+@media (max-width: 600px) {
+    header{flex-direction: column}
+
+    header > div {width: 100%}
+
+    header > .flex {margin-top: 20px; border-top: 1px solid hsl(228, 12%, 44%)}
+}
+header > div:first-of-type > h2 {margin: 0}
+
+header > div:first-of-type > p {margin: 10px 0 0}
+
+header > div:last-of-type > div {
+    width: 50px;
+    margin-left: 10px;
+    padding: 3px 3px 0;
+    text-align: right;
+    border-radius: 50px;
+    background-color: hsl(230, 22%, 74%);
+}
+header > div:last-of-type > div:hover {background-image: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%))}
+
+header > div:last-of-type > div span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: hsl(0, 0%, 100%);
+    transition: transform .4s linear;
+    
+}
+header > div:last-of-type .dark {background-image: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%))}
+
+header > div:last-of-type .dark span {background-color: hsl(232, 19%, 15%); transform: translateX(-25px)}
+/* Start Followers */
+.followers {margin: 40px auto; text-align: center; justify-content: space-between}
+
+.followers > div {
+    flex-basis: 23.5%;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: hsl(225, 100%, 98%);
+    position: relative;
+}
+@media (max-width: 600px) {
+    .followers {flex-direction: column; align-items: stretch}
+
+    .followers > div { margin-bottom: 25px}
+}
+.followers > div::after {
+    content: "";
+    width: 100%;
+    height: 5px;
+    border-radius: 5px 5px 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.followers > .facebook::after {background-color: hsl(208, 92%, 53%)}
+
+.followers > .twitter::after {background-color: hsl(203, 89%, 53%)}
+
+.followers > .insta::after {background-image: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%))}
+
+.followers > .youtube::after {background-color: hsl(348, 97%, 39%)}
+
+.followers > div > div {display: flex; align-items: center; justify-content: center}
+
+.followers > div > div:first-of-type p {margin-left: 5px}
+
+.followers > div > h1 {margin: 0px; font-size: 40px}
+
+.followers > div > p {letter-spacing: 4px; font-weight: 400; margin-top: 5px}
+/* Start Overview */
+.overview {margin-bottom: 30px}
+
+.overview > h3 {color: hsl(228, 12%, 44%)}
+
+@media (max-width: 600px) {.overview > h3{font-size: 1.6em;}}
+
+.overview > .content {
+    display: grid;    
+    grid-template-columns: repeat(4, 23.5%);
+    justify-items: stretch;
+    column-gap: 2%;
+    row-gap: 10%;
+}
+.content .square {padding: 20px; border-radius: 5px; background-color: hsl(225, 100%, 98%)}
+
+@media (max-width: 600px) {
+    .overview > .content{grid-template-columns: auto; row-gap: 0%}
+
+    .content .square {margin-bottom: 15px}
+}
+.content .dark, .followers .dark {background-color: hsl(228, 28%, 20%)}
+
+.content > div:hover, .followers > div:hover {filter: brightness(0.95)}
+
+.content .dark:hover, .followers .dark:hover {filter: brightness(1.5)}
+
+.content .square > div {display: flex; align-items: center; justify-content: space-between}
+
+.content .square > div:first-of-type > p {margin-top: 5px}
+
+.content .square > div:last-of-type > div {display: flex; align-items: center; justify-content: space-between}
+
+.content .square > div > h2 {margin: 0}
+
+.content .square > div:last-of-type {margin-top: 15px; align-items: flex-end}
+
+.content .square > div > div > p {margin: 0; margin-left: 5px}
+
+.attribution {font-size: 11px; text-align: center}
+
+.attribution a {color: hsl(228, 45%, 44%)}
